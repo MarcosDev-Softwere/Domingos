@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Requisitos da Reunião</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-image: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .toggle-btn {
+      display: block;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 0 auto 20px auto;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .requisitos {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 12px;
+      padding-left: 25px;
+      position: relative;
+      color: #34495e;
+      line-height: 1.6;
+    }
+
+    li::before {
+      content: "✔️";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    ul ul {
+      margin-top: 8px;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Requisitos Anotados Durante a Reunião</h2>
+    <button class="toggle-btn" onclick="toggleRequisitos()">Mostrar / Ocultar Requisitos</button>
+    <div class="requisitos" id="requisitos">
+      <ul>
+        <li>Fluxo de 1000 clientes por mês (sem limite para envio de mensagens)</li>
+        <li>Envio de mensagens ilimitado</li>
+        <li>Fluxo de atendimento automatizado:
+          <ul>
+            <li>Envio periódico de mensagens (lembretes/follow-up)</li>
+            <li>Interação pré-configurada com o cliente</li>
+            <li>Fluxo de conversa rígido, baseado em etapas</li>
+            <li>Agendamento automatizado</li>
+            <li>Coleta de pós-atendimento (feedback)</li>
+          </ul>
+        </li>
+        <li>Produção de relatórios:
+          <ul>
+            <li>Relação de envios e retornos de mensagens</li>
+            <li>Taxa de retornos bem-sucedidos</li>
+            <li>Tabela de agendamentos marcados</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function toggleRequisitos() {
+      const div = document.getElementById("requisitos");
+      div.style.display = div.style.display === "none" || div.style.display === "" ? "block" : "none";
+    }
+  </script>
+</body>
+</html>
